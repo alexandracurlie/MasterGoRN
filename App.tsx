@@ -1,23 +1,29 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
+  StyleSheet,
   useColorScheme,
-  View,
 } from 'react-native';
+import {Onboard} from './src/components/Onboard/Onboard';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View />
-      </ScrollView>
+      <Onboard />
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+})
 
 export default App;
