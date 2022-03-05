@@ -18,3 +18,25 @@ export const slides = [
     img: require('../images/png/onboard3.png'),
   },
 ]
+
+
+export const socials = [
+  {
+    id: '1',
+    link: 'https://facebook.com/',
+    img: require('../images/png/socialFb.png'),
+  },
+  {
+    id: '2',
+    link: 'https://twitter.com/',
+    img: require('../images/png/socialTw.png'),
+  },
+  {
+    id: '3',
+    link: 'https://linkedin.com/',
+    img: require('../images/png/socialIn.png'),
+  },
+]
+
+export const SIGN_IN_PNG = require('../images/png/signIn.png')
+export const SIGN_UP_PNG = require('../images/png/signUp.png')
