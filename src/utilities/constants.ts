@@ -40,3 +40,5 @@ export const socials = [
 
 export const SIGN_IN_PNG = require('../images/png/signIn.png')
 export const SIGN_UP_PNG = require('../images/png/signUp.png')
+export const ARROW_PNG = require('../images/png/arrow.png')
+export const BURGER_PNG = require('../images/png/burger.png')

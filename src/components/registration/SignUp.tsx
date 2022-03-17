@@ -1,16 +1,17 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import {SIGN_UP_PNG} from '../../utilities';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
 import {Button} from '../Buttons/Button';
 import {Social} from '../Social/Social';
 
-export const SignUp = () => {
+export const SignUp = ({navigation}: any) => {
 
   const onPress = () => console.log("wow")
 
   return (
     <View style={styles.container}>
+
       <Image source={SIGN_UP_PNG}
              style={styles.img} />
 
@@ -18,8 +19,7 @@ export const SignUp = () => {
         <TextInput style={styles.input}
                    placeholder={"Enter email"}
                    placeholderTextColor={Colors.light_gray}
-                   keyboardType={'email-address'}
-        />
+                   keyboardType={'email-address'} />
 
         <TextInput style={styles.input}
                    placeholder={"Enter password"}
@@ -38,7 +38,12 @@ export const SignUp = () => {
 
       <View style={styles.container_bottom}>
         <Text style={[styles.text]}>Already have an account?</Text>
-        <Pressable><Text style={[styles.text, styles.bottom_link]}>Sign</Text></Pressable>
+        <Text style={[styles.text, styles.bottom_link]}
+              onPress={() => {
+                navigation.navigate('Sign In');
+              }}>
+          Sign
+        </Text>
       </View>
 
     </View>
@@ -51,6 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: "center",
+    backgroundColor: Colors.background,
   },
 
   img: {

@@ -1,5 +1,6 @@
-import React, {useRef, useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {OnboardItem} from './OnboardItem';
 import {slides, OnboardItemType} from '../../utilities';
 import {Button} from '../Buttons/Button';
@@ -7,15 +8,15 @@ import {Paginator} from '../Paginator/Paginator';
 
 type Props = {
   item: OnboardItemType,
+  check: () => Promise<void> | void,
 }
 
-export const Onboard = () => {
-
+export const Onboard = ({check}: Pick<Props, "check">) => {
   const scrollX = useRef(new Animated.Value(0)).current
   const [currentIndex, setCurrentIndex] = useState(0)
   const slidesRef = useRef(null)
 
-  const renderItem = ({item}: Props) => (
+  const renderItem = ({item}: Pick<Props, "item">) => (
     <OnboardItem title={item.title}
                  img={item.img}
                  description={item.description} />
@@ -27,14 +28,16 @@ export const Onboard = () => {
     setCurrentIndex(viewableItems[0].index)
   }).current
 
-  const scrollTo = () => {
-    if (currentIndex < slides.length- 1) {
+  const scrollTo = useCallback(() => {
+    if (currentIndex < slides.length - 1) {
       // @ts-ignore
       slidesRef.current.scrollToIndex({index: currentIndex + 1})
     } else {
-      console.log("Last item")
+      AsyncStorage.setItem('@viewed', 'true')
+        .catch(error => console.log("Error at setItem", error))
+        .then(() => check())
     }
-  }
+  }, [currentIndex])
 
   return (
     <View style={styles.container}>
@@ -56,7 +59,8 @@ export const Onboard = () => {
       </View>
       <Paginator data={slides} scrollX={scrollX}/>
 
-      <Button title={"Next"} onPress={scrollTo}/>
+      <Button title={currentIndex < slides.length - 1 ? "Next" : "Login"}
+              onPress={scrollTo}/>
     </View>
   )
 }

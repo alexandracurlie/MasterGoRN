@@ -5,11 +5,13 @@ import {Colors, Fonts, WindowSize} from '../../styles/styles';
 import {Button} from '../Buttons/Button';
 import {Social} from '../Social/Social';
 
-export const SignIn = () => {
+export const SignIn = ({navigation}: any) => {
+
   const onPress = () => console.log("wow")
 
   return (
     <View style={styles.container}>
+
       <Image source={SIGN_IN_PNG}
              style={styles.img} />
 
@@ -17,8 +19,7 @@ export const SignIn = () => {
         <TextInput style={styles.input}
                    placeholder={"Username"}
                    placeholderTextColor={Colors.light_gray}
-                   keyboardType={'email-address'}
-        />
+                   keyboardType={'email-address'} />
 
         <TextInput style={styles.input}
                    placeholder={"Password"}
@@ -37,7 +38,10 @@ export const SignIn = () => {
 
       <View style={styles.container_bottom}>
         <Text style={[styles.text]}>Don't have an account?</Text>
-        <Pressable><Text style={[styles.text, styles.bottom_link]}>Sign</Text></Pressable>
+        <Text style={[styles.text, styles.bottom_link]}
+              onPress={() => { navigation.navigate('Sign Up'); }}>
+          Sign
+        </Text>
       </View>
 
     </View>
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: "center",
+    backgroundColor: Colors.background,
   },
 
   img: {

@@ -3,7 +3,7 @@ import {Pressable, StyleSheet, Text} from 'react-native';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
 
 type Props = {
-  onPress: () => void | undefined,
+  onPress: () => Promise<void> | void,
   title: string,
 }
 
