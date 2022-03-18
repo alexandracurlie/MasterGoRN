@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ARROW_PNG, BURGER_PNG} from '../../utilities';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useNavigation} from '@react-navigation/native';
 
 type Props = {
   title: string,
@@ -23,18 +23,15 @@ export const Header = ({title, check}: Props) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigation.goBack()}>
-        <Image source={ARROW_PNG}
-               style={styles.arrow} />
+        <Image source={ARROW_PNG} style={styles.arrow} />
       </Pressable>
       <Text style={styles.title}> {title} </Text>
       <Pressable onPress={toOnboard}>
-        <Image source={BURGER_PNG}
-               style={styles.burger} />
+        <Image source={BURGER_PNG} style={styles.burger} />
       </Pressable>
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -45,6 +42,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 15,
     backgroundColor: Colors.background,
+    paddingTop: 60,
   },
 
   title: {
@@ -53,7 +51,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     letterSpacing: .38,
     color: Colors.dark_gray,
-
   },
 
   arrow: {

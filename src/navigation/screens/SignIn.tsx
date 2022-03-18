@@ -1,47 +1,50 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
-import {SIGN_UP_PNG} from '../../utilities';
+import {Image, StyleSheet, TextInput, View, Text, Pressable} from 'react-native';
+import {Button} from '../../components/Buttons/Button';
+import {Social} from '../../components/Social/Social';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
-import {Button} from '../Buttons/Button';
-import {Social} from '../Social/Social';
+import {SIGN_IN_PNG} from '../../utilities';
 
-export const SignUp = ({navigation}: any) => {
+export const SignIn = ({navigation}: any) => {
 
-  const onPress = () => console.log("wow")
+  const onPress = () => {
+    navigation.navigate('Profile');
+  }
 
   return (
     <View style={styles.container}>
 
-      <Image source={SIGN_UP_PNG}
+      <Image source={SIGN_IN_PNG}
              style={styles.img} />
 
       <View style={styles.form}>
         <TextInput style={styles.input}
-                   placeholder={"Enter email"}
+                   placeholder={"Username"}
                    placeholderTextColor={Colors.light_gray}
                    keyboardType={'email-address'} />
 
         <TextInput style={styles.input}
-                   placeholder={"Enter password"}
+                   placeholder={"Password"}
                    placeholderTextColor={Colors.light_gray} />
 
-        <TextInput style={styles.input}
-                   placeholder={"Confirm password"}
-                   placeholderTextColor={Colors.light_gray} />
+        <Pressable style={{width: WindowSize.width * 0.85}}>
+          <Text style={[styles.text, styles.textAlign_right]}>Forgot your password?</Text>
+        </Pressable>
       </View>
 
-      <Button onPress={onPress} title={"Sign Up"} />
+      <Button title={"Login"}
+              onPress={onPress}
+              color={"green"}
+              size={"large"} />
 
       <Text style={[styles.text, styles.textAlign_center]}>or</Text>
 
       <Social />
 
       <View style={styles.container_bottom}>
-        <Text style={[styles.text]}>Already have an account?</Text>
+        <Text style={[styles.text]}>Don't have an account?</Text>
         <Text style={[styles.text, styles.bottom_link]}
-              onPress={() => {
-                navigation.navigate('Sign In');
-              }}>
+              onPress={() => { navigation.navigate('Sign Up'); }}>
           Sign
         </Text>
       </View>
@@ -49,7 +52,6 @@ export const SignUp = ({navigation}: any) => {
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({
   container: {

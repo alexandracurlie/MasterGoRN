@@ -7,4 +7,5 @@ export const Colors = {
   deep_gray: "#323440",
   green: "#20C3AF",
   orange: "#FFB19D",
+  border: "rgba(226, 226, 224, 0.5)"
 }

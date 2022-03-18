@@ -2,9 +2,9 @@ import React, {useCallback, useRef, useState} from 'react';
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {OnboardItem} from './OnboardItem';
-import {slides, OnboardItemType} from '../../utilities';
 import {Button} from '../Buttons/Button';
 import {Paginator} from '../Paginator/Paginator';
+import {slides, OnboardItemType} from '../../utilities';
 
 type Props = {
   item: OnboardItemType,
@@ -60,6 +60,8 @@ export const Onboard = ({check}: Pick<Props, "check">) => {
       <Paginator data={slides} scrollX={scrollX}/>
 
       <Button title={currentIndex < slides.length - 1 ? "Next" : "Login"}
+              color={"green"}
+              size={"large"}
               onPress={scrollTo}/>
     </View>
   )
@@ -70,5 +72,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: 'center',
+    paddingVertical: 40,
   }
 })

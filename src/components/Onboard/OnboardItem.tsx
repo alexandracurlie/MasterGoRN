@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
   },
 
   description: {
+    width: WindowSize.width * 0.7,
+    textAlign: "center",
     fontFamily: Fonts.font,
     fontSize: 16,
     fontWeight: "400",
     color: Colors.gray,
-    width: WindowSize.width * 0.7,
-    textAlign: "center",
   },
 })

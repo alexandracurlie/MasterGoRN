@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import 'react-native-gesture-handler';
-import {SafeAreaView, useColorScheme} from 'react-native';
+import {SafeAreaView, View, useColorScheme} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Onboard} from './src/components/Onboard/Onboard';
 import {Navigator} from './src/navigation/Navigator';
@@ -22,11 +22,11 @@ const App = () => {
   }, [])
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View style={{flex: 1}}>
       { viewedOnboard
         ? <Navigator check={check}/>
         : <Onboard check={check}/> }
-    </SafeAreaView>
+    </View>
   );
 };
 
