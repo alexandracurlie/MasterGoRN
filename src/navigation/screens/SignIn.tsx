@@ -8,7 +8,7 @@ import {SIGN_IN_PNG} from '../../utilities';
 export const SignIn = ({navigation}: any) => {
 
   const onPress = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('Main');
   }
 
   return (

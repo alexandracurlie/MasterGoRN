@@ -8,7 +8,7 @@ import {Colors, Fonts, WindowSize} from '../../styles/styles';
 export const SignUp = ({navigation}: any) => {
 
   const onPress = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('Main');
   }
 
   return (

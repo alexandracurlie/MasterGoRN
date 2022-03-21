@@ -5,7 +5,7 @@ import {Button} from '../../components/Buttons/Button';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
 import {PROFILE_JPG} from '../../utilities';
 
-export const Profile = () => {
+export const Home = () => {
 
   return (
     <View style={styles.container}>

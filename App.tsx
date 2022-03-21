@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import 'react-native-gesture-handler';
-import {SafeAreaView, View, useColorScheme} from 'react-native';
+import {View, useColorScheme} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Onboard} from './src/components/Onboard/Onboard';
-import {Navigator} from './src/navigation/Navigator';
+import {StackNavigator} from './src/navigation/StackNavigator';
 
 //TODO: take the func CHECK() out of App
 
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
       { viewedOnboard
-        ? <Navigator check={check}/>
+        ? <StackNavigator check={check}/>
         : <Onboard check={check}/> }
     </View>
   );
