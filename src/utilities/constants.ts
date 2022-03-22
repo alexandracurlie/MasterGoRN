@@ -45,11 +45,22 @@ export const BURGER_PNG = require('../images/png/burger.png')
 export const PHONE_PNG = require('../images/png/phone.png')
 export const MAIL_PNG = require('../images/png/mail.png')
 export const CIRCLE_PNG = require('../images/png/circle.png')
-export const PROFILE_JPG = require('../images/jpg/profile.jpg')
+export const HOME_PNG = require('../images/png/home.png')
+export const PROFILE_PNG = require('../images/png/profile.png')
+export const SETTINGS_PNG = require('../images/png/settings.png')
+export const MESSAGES_PNG = require('../images/png/messages.png')
 
+export const PROFILE_JPG = require('../images/jpg/profile.jpg')
 
 export const contacts = [
   {id: "1", title: "Phone number", content: "+79650159015", img: PHONE_PNG, img_size: { width: 18, height: 18 } },
   {id: "2", title: "Email", content: "alexa.curlie@gmail.com", img: MAIL_PNG, img_size: { width: 22, height: 15 } },
   {id: "3", title: "Completed projects", content: "248", img: CIRCLE_PNG, img_size: { width: 22, height: 22 }  },
+]
+
+export const drawerData = [
+  {id: "1", title: "Home", img: HOME_PNG},
+  {id: "2", title: "Profile", img: PROFILE_PNG},
+  {id: "3", title: "Settings", img: SETTINGS_PNG},
+  {id: "4", title: "Messages", img: MESSAGES_PNG},
 ]
