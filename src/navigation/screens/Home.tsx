@@ -1,9 +1,10 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {ContactsList} from '../../components/Lists/ContactsList';
+import {ContactsList} from '../../components/Lists/ContactsList/ContactsList';
 import {Button} from '../../components/Buttons/Button';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
 import {PROFILE_JPG} from '../../utilities';
+import {Link} from '../../components/Link/Link';
 
 export const Home = () => {
 
@@ -22,7 +23,7 @@ export const Home = () => {
           <Text style={styles.subtitle}>ID: 11206</Text>
         </View>
 
-        <Text style={styles.link}>Edit</Text>
+        <Link title={"Edit"} onPress={()=> console.log("edit")} />
 
         <View style={styles.container_buttons}>
           <Button title={"About me"}
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexWrap: "wrap",
     width: 200,
+    marginBottom: 15,
   },
 
   title: {
@@ -110,18 +112,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
 
-  link: {
-    fontFamily: Fonts.font,
-    fontSize: 16,
-    fontWeight: '400',
-    textDecorationLine: 'underline',
-    color: Colors.orange,
-    marginVertical: WindowSize.height * 0.03,
-  },
-
   container_buttons: {
     flexDirection: 'row',
     justifyContent: "space-between",
     width: WindowSize.width * 0.84,
+    marginTop: 15,
   },
 })

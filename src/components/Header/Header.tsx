@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {ARROW_PNG, BURGER_PNG} from '../../utilities';
+import {ARROW_LEFT_PNG, BURGER_PNG} from '../../utilities';
 import {Colors, Fonts, WindowSize} from '../../styles/styles';
 
 type Props = {
@@ -23,7 +23,7 @@ export const Header = ({title, check}: Props) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigation.goBack()}>
-        <Image source={ARROW_PNG} style={styles.arrow} />
+        <Image source={ARROW_LEFT_PNG} style={styles.arrow} />
       </Pressable>
       <Text style={styles.title}> {title} </Text>
       <Pressable onPress={toOnboard}>

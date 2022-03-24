@@ -6,6 +6,7 @@ import {CustomDrawer} from '../components/CustomDrawer/CustomDrawer';
 import {Colors, Fonts} from '../styles/styles';
 import {DrawerItem} from '../components/CustomDrawer/DrawerItem';
 import {HOME_PNG, MESSAGES_PNG, PROFILE_PNG, SETTINGS_PNG} from '../utilities';
+import {Settings} from './screens/Settings';
 
 const Drawer = createDrawerNavigator()
 
@@ -45,7 +46,7 @@ export const DrawerHome = (...props: any) => {
                      }}
       />
       <Drawer.Screen name={"Settings"}
-                     component={Test}
+                     component={Settings}
                      options={{
                        drawerIcon: () => (
                          <DrawerItem id={"3"}

@@ -40,7 +40,8 @@ export const socials = [
 
 export const SIGN_IN_PNG = require('../images/png/signIn.png')
 export const SIGN_UP_PNG = require('../images/png/signUp.png')
-export const ARROW_PNG = require('../images/png/arrow.png')
+export const ARROW_LEFT_PNG = require('../images/png/arrowLeft.png')
+export const ARROW_RIGHT_PNG = require('../images/png/arrowRight.png')
 export const BURGER_PNG = require('../images/png/burger.png')
 export const PHONE_PNG = require('../images/png/phone.png')
 export const MAIL_PNG = require('../images/png/mail.png')
@@ -63,4 +64,11 @@ export const drawerData = [
   {id: "2", title: "Profile", img: PROFILE_PNG},
   {id: "3", title: "Settings", img: SETTINGS_PNG},
   {id: "4", title: "Messages", img: MESSAGES_PNG},
+]
+
+export const settingsData = [
+  {id: "1", title: "Payment cards"},
+  {id: "2", title: "Write to us"},
+  {id: "3", title: "Rate us on app store"},
+  {id: "4", title: "About Us"},
 ]

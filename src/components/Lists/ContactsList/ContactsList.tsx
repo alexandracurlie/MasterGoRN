@@ -1,8 +1,8 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
 import {ContactsItem} from './ContactsItem';
-import {contacts} from '../../utilities';
-import {WindowSize} from '../../styles/styles';
+import {contacts} from '../../../utilities';
+import {WindowSize} from '../../../styles/styles';
 
 export const ContactsList = () => {
 
